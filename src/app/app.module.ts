@@ -9,9 +9,15 @@ import { collectionReducer } from './state/collection.reducer';
 import { StoreModule } from '@ngrx/store';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCollectionComponent } from './book-collection/book-collection.component';
+import { AutoLogoutComponent } from './auto-logout/auto-logout.component';
 
 @NgModule({
-  declarations: [AppComponent, BookListComponent, BookCollectionComponent],
+  declarations: [
+    AppComponent,
+    BookListComponent,
+    BookCollectionComponent,
+    AutoLogoutComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
