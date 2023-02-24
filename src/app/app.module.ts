@@ -10,6 +10,8 @@ import { StoreModule } from '@ngrx/store';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCollectionComponent } from './book-collection/book-collection.component';
 import { AutoLogoutComponent } from './auto-logout/auto-logout.component';
+import { counterReducer } from './counter/counter.reducer';
+import { MyCounterComponent } from './counter/my-counter/my-counter.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,16 @@ import { AutoLogoutComponent } from './auto-logout/auto-logout.component';
     BookListComponent,
     BookCollectionComponent,
     AutoLogoutComponent,
+    MyCounterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
+    StoreModule.forRoot({
+      books: booksReducer,
+      collection: collectionReducer,
+      count: counterReducer,
+    }),
     HttpClientModule,
   ],
   providers: [],
