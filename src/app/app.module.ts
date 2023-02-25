@@ -12,6 +12,7 @@ import { BookCollectionComponent } from './book-collection/book-collection.compo
 import { AutoLogoutComponent } from './auto-logout/auto-logout.component';
 import { counterReducer } from './counter/counter.reducer';
 import { MyCounterComponent } from './counter/my-counter/my-counter.component';
+import { LoginPageComponent } from './login/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MyCounterComponent } from './counter/my-counter/my-counter.component';
     BookCollectionComponent,
     AutoLogoutComponent,
     MyCounterComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
