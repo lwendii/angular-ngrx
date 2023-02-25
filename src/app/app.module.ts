@@ -13,6 +13,8 @@ import { AutoLogoutComponent } from './auto-logout/auto-logout.component';
 import { counterReducer } from './counter/counter.reducer';
 import { MyCounterComponent } from './counter/my-counter/my-counter.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
+import { ScoreboardModule } from './scoreboard/scoreboard.module';
+import { scoreboardReducer } from './scoreboard/new/scoreboard.reducer';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,14 @@ import { LoginPageComponent } from './login/login-page/login-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot({
       books: booksReducer,
       collection: collectionReducer,
       count: counterReducer,
+      game: scoreboardReducer,
     }),
-    HttpClientModule,
+    ScoreboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
