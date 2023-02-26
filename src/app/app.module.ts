@@ -15,6 +15,9 @@ import { MyCounterComponent } from './counter/my-counter/my-counter.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
 import { ScoreboardModule } from './scoreboard/scoreboard.module';
 import { scoreboardReducer } from './scoreboard/new/scoreboard.reducer';
+import { MoviesPageComponent } from './movies/movies-page/movies-page.component';
+import { EffectsModule } from '@ngrx/effects';
+import { MovieEffects } from './movies/movie.effecs';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { scoreboardReducer } from './scoreboard/new/scoreboard.reducer';
     AutoLogoutComponent,
     MyCounterComponent,
     LoginPageComponent,
+    MoviesPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,7 @@ import { scoreboardReducer } from './scoreboard/new/scoreboard.reducer';
       game: scoreboardReducer,
     }),
     ScoreboardModule,
+    EffectsModule.forRoot([MovieEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
