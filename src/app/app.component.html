@@ -1,4 +1,4 @@
-<h2>Books</h2>
+<!-- <h2>Books</h2>
 <app-book-list
   class="book-list"
   [books]="(books$ | async)!"
@@ -11,13 +11,49 @@
   [books]="(bookCollection$ | async)!"
   (remove)="onRemove($event)"
 >
-</app-book-collection>
+</app-book-collection> -->
 
 <!-- <h3>Autologout</h3>
 <app-auto-logout></app-auto-logout> -->
 
-<app-my-counter></app-my-counter>
+<!-- <app-my-counter></app-my-counter>
 
 <app-scoreboard-page></app-scoreboard-page>
 
-<app-movies-page></app-movies-page>
+<app-movies-page></app-movies-page> -->
+
+<h1 class="text-center my-4">Data Table</h1>
+
+<ng-container *ngrxLet="data$; let data; let error = $error">
+  <div class="container">
+    <div class="row">
+      <!-- SPINNER -->
+      <div class="col-12" *ngIf="!error && !data">
+        <app-spinner></app-spinner>
+      </div>
+      <!-- ERROR -->
+      <div class="col-12" *ngIf="error">
+        <app-error></app-error>
+      </div>
+      <!-- TABLE-->
+      <ng-container *ngIf="data">
+        <div class="col-3 mx-auto">
+          <div class="mb-3">
+            <input
+              [formControl]="searchControl"
+              type="search"
+              class="form-control"
+              id="search"
+              placeholder="Search..."
+              aria-describedby="filter"
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <app-data-table [data]="data" [headerRow]="headerRow">
+          </app-data-table>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
