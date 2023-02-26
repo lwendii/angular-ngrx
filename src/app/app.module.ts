@@ -26,6 +26,8 @@ import { DataTableModule } from './table-example/store/data-table/data-table.mod
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LetModule } from '@ngrx/component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    LetModule,
     StoreModule.forRoot({
       books: booksReducer,
       collection: collectionReducer,

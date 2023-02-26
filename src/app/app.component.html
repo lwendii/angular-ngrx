@@ -24,15 +24,15 @@
 
 <h1 class="text-center my-4">Data Table</h1>
 
-<ng-container *ngrxLet="data$; let data; let error = $error">
+<ng-container *ngrxLet="data$ as data; error as $error">
   <div class="container">
     <div class="row">
       <!-- SPINNER -->
-      <div class="col-12" *ngIf="!error && !data">
+      <div class="col-12" *ngIf="!$error && !data">
         <app-spinner></app-spinner>
       </div>
       <!-- ERROR -->
-      <div class="col-12" *ngIf="error">
+      <div class="col-12" *ngIf="$error">
         <app-error></app-error>
       </div>
       <!-- TABLE-->

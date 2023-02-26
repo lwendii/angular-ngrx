@@ -12,7 +12,7 @@ export class DataService {
   getUsers() {
     return this.http.get<any>(this.URL).pipe(
       map((data) => {
-        return data.map((item: any) => ({ ...item, city: item.adress.city }));
+        return data.map((item: any) => ({ ...item, city: item.address.city }));
       })
     );
   }
